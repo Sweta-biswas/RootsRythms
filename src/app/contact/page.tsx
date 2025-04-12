@@ -73,8 +73,10 @@ function MusicSchoolContactUs() {
             className="text-gray-300 max-w-2xl mx-auto text-base md:text-lg"
             variants={fadeIn}
           >
-            We're here to help with any questions about our courses, programs, or events. 
-            Reach out and let us know how we can assist you in your musical journey.
+           
+          We&apos;re here to help with any questions about our courses, programs, or events. 
+          Reach out and let us know how we can assist you in your musical journey.
+
           </motion.p>
         </motion.div>
         
@@ -95,7 +97,7 @@ function MusicSchoolContactUs() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
-              <p className="text-gray-400">Thank you for reaching out. We'll get back to you shortly.</p>
+              <p className="text-gray-400">Thank you for reaching out. We&apos;ll get back to you shortly.</p>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -175,7 +177,7 @@ function MusicSchoolContactUs() {
                 </motion.button>
                 
                 <div className="text-gray-400 text-sm">
-                  We'll never share your details.
+                  We&apos;ll never share your details.
                 </div>
               </motion.div>
             </form>

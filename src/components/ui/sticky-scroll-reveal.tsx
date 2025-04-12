@@ -10,7 +10,7 @@ export const StickyScroll = ({
   content: {
     title: string | React.ReactNode;
     description: string;
-    content?: React.ReactNode | any;
+    content?: React.ReactNode;
   }[];
   contentClassName?: string;
 }) => {
@@ -54,7 +54,7 @@ export const StickyScroll = ({
 
   useEffect(() => {
     setBackgroundGradient(gradients[activeCard % gradients.length]);
-  }, [activeCard]);
+  }, [activeCard, gradients]);
 
   return (
     <div className="relative">

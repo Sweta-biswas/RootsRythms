@@ -47,11 +47,7 @@ export const AnimatedTestimonials = ({
       const interval = setInterval(handleNext, 5000);
       return () => clearInterval(interval);
     }
-  }, [autoplay]);
-
-  const randomRotateY = () => {
-    return Math.floor(Math.random() * 21) - 10;
-  };
+  }, [autoplay, handleNext]);
 
   if (!data || data.length === 0) {
     return <div>No testimonials available</div>;
@@ -167,7 +163,7 @@ export const AnimatedTestimonials = ({
             className="relative"
           >
             {/* Quotation mark */}
-            <div className="absolute -left-8 -top-8 text-6xl font-serif text-purple-200 dark:text-purple-800">"</div>
+            <div className="absolute -left-8 -top-8 text-6xl font-serif text-purple-200 dark:text-purple-800">&ldquo;</div>
             
             {/* Name with gradient underline */}
             <h3 className="relative text-3xl font-bold text-white dark:text-white">
@@ -222,7 +218,7 @@ export const AnimatedTestimonials = ({
             )}
             
             {/* End quotation mark */}
-            <div className="absolute -bottom-16 right-0 text-6xl font-serif text-purple-200 dark:text-purple-800">"</div>
+            <div className="absolute -bottom-16 right-0 text-6xl font-serif text-purple-200 dark:text-purple-800">&rdquo;</div>
           </motion.div>
           
           {/* Navigation buttons with enhanced styling */}

@@ -126,7 +126,7 @@ export const ProductItem = ({
   );
 };
 
-export const HoveredLink = ({ children, ...rest }: any) => {
+export const HoveredLink = ({ children, ...rest }: React.ComponentPropsWithoutRef<typeof Link>) => {
   return (
     <motion.div whileHover={{ x: 2 }} transition={{ duration: 0.1 }}>
       <Link
