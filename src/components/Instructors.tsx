@@ -40,23 +40,19 @@ const instructors = [
 
 function Instructors() {
   return (
-    <div className="relative min-h-[50rem] overflow-hidden">
-      <WavyBackground className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center py-20">
-        <div className="text-center mt-25 mb-16 px-4">
-          <h2 className="text-2xl md:text-4xl lg:text-6xl text-white font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-purple-200">
+    <div className="relative">
+      <WavyBackground className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center">
+          <h2 className="text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 mb-4">
             Meet Our Instructors
           </h2>
-          <div className="h-1 w-24 mx-auto bg-gradient-to-r from-blue-500 to-purple-500 mb-6"></div>
-          <p className="text-base md:text-lg text-blue-100 max-w-2xl mx-auto">
+          <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
             Discover the talented professionals who will guide your musical journey with their expertise and passion
           </p>
         </div>
         
-        <div className="w-full max-w-7xl mx-auto">
-          <AnimatedTestimonials 
-            testimonials={instructors} 
-            autoplay={true} 
-          />
+        <div className="mt-16">
+          <AnimatedTestimonials testimonials={instructors} />
         </div>
       </WavyBackground>
     </div>

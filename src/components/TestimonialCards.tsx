@@ -66,7 +66,7 @@ function TestimonialCards() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="text-center mb-10 md:mb-16">
           <span className="inline-block px-4 py-1 rounded-full bg-indigo-900/30 text-indigo-400 text-sm font-medium mb-3">TESTIMONIALS</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-3 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-500">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-3 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
             Hear our Harmony: Voices of Success
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
