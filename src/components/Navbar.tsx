@@ -64,7 +64,7 @@ function Navbar({ className }: { className?: string }) {
       {/* Desktop Navigation */}
       <div
         className={cn(
-          "fixed top-5 inset-x-0 max-w-4xl mx-auto z-50 transition-all duration-300 px-4",
+          "fixed top-5 inset-x-0 max-w-4xl mx-auto z-50 transition-all duration-300 px-4 hidden md:block",
           visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0",
           className
         )}
@@ -123,31 +123,33 @@ function Navbar({ className }: { className?: string }) {
               </MenuItem>
             </Link>
           </Menu>
-          
-          {/* Mobile menu button */}
-          <button 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden absolute right-2 top-2 p-2 rounded-full bg-white/10 backdrop-blur-lg text-gray-800 dark:text-white z-50"
-          >
-            <span className="sr-only">Open menu</span>
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              strokeWidth={1.5} 
-              stroke="currentColor" 
-              className="w-6 h-6"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                d={mobileMenuOpen 
-                  ? "M6 18L18 6M6 6l12 12" 
-                  : "M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"} 
-              />
-            </svg>
-          </button>
         </div>
+      </div>
+
+      {/* Mobile Navigation Button */}
+      <div className="fixed top-5 right-5 z-50 md:hidden">
+        <button 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="p-2 rounded-full bg-white/10 backdrop-blur-lg text-white dark:text-white"
+        >
+          <span className="sr-only">Open menu</span>
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            strokeWidth={1.5} 
+            stroke="currentColor" 
+            className="w-6 h-6"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              d={mobileMenuOpen 
+                ? "M6 18L18 6M6 6l12 12" 
+                : "M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"} 
+            />
+          </svg>
+        </button>
       </div>
 
       {/* Mobile Navigation Menu */}

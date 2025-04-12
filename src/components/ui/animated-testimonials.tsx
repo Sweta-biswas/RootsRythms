@@ -54,11 +54,11 @@ export const AnimatedTestimonials = ({
   }
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 py-12 font-sans antialiased">
-      <div className="relative grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16 lg:gap-24">
+    <div className="mx-auto w-full max-w-6xl px-4 py-8 md:py-12 font-sans antialiased">
+      <div className="relative grid grid-cols-1 gap-8 md:gap-12 md:grid-cols-2 lg:gap-24">
         {/* Image section with enhanced animations */}
-        <div className="order-2 md:order-1">
-          <div className="relative h-96 w-full overflow-visible">
+        <div className="order-1 md:order-1">
+          <div className="relative h-72 sm:h-80 md:h-96 w-full overflow-visible">
             <AnimatePresence mode="wait">
               {data.map((testimonial, index) => {
                 const imageSrc = testimonial.src || testimonial.image;
@@ -138,10 +138,47 @@ export const AnimatedTestimonials = ({
               })}
             </AnimatePresence>
           </div>
+
+          {/* Mobile Navigation buttons - Only visible on small screens */}
+          <div className="flex items-center justify-center gap-4 mt-6 md:hidden">
+            <button
+              onClick={handlePrev}
+              className="group flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-0.5 shadow-lg transition-all duration-300 hover:scale-110"
+            >
+              <div className="flex h-full w-full items-center justify-center rounded-full bg-white dark:bg-gray-900">
+                <IconArrowLeft className="h-4 w-4 text-purple-600 transition-transform duration-300 group-hover:-translate-x-1 dark:text-purple-400" />
+              </div>
+            </button>
+            <div className="flex gap-2">
+              {data.map((_, index) => (
+                <button
+                  key={`indicator-mobile-${index}`}
+                  onClick={() => {
+                    setDirection(index > active ? 1 : -1);
+                    setActive(index);
+                  }}
+                  className={`h-2 rounded-full transition-all duration-300
+                    ${isActive(index) 
+                      ? 'w-6 bg-gradient-to-r from-blue-500 to-purple-600' 
+                      : 'w-2 bg-gray-300 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600'}`
+                  }
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
+            <button
+              onClick={handleNext}
+              className="group flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-0.5 shadow-lg transition-all duration-300 hover:scale-110"
+            >
+              <div className="flex h-full w-full items-center justify-center rounded-full bg-white dark:bg-gray-900">
+                <IconArrowRight className="h-4 w-4 text-purple-600 transition-transform duration-300 group-hover:translate-x-1 dark:text-purple-400" />
+              </div>
+            </button>
+          </div>
         </div>
         
         {/* Content section with enhanced animations */}
-        <div className="order-1 flex flex-col justify-center md:order-2">
+        <div className="order-2 flex flex-col justify-center md:order-2">
           <motion.div
             key={`content-${active}`}
             initial={{
@@ -221,8 +258,8 @@ export const AnimatedTestimonials = ({
             <div className="absolute -bottom-16 right-0 text-6xl font-serif text-purple-200 dark:text-purple-800">&rdquo;</div>
           </motion.div>
           
-          {/* Navigation buttons with enhanced styling */}
-          <div className="mt-12 flex items-center gap-4">
+          {/* Desktop Navigation buttons - Hidden on small screens */}
+          <div className="mt-12 hidden md:flex items-center gap-4">
             <div className="h-0.5 flex-1 bg-gradient-to-r from-transparent to-gray-200 dark:to-gray-700"></div>
             <button
               onClick={handlePrev}
@@ -243,8 +280,8 @@ export const AnimatedTestimonials = ({
             <div className="h-0.5 flex-1 bg-gradient-to-r from-gray-200 to-transparent dark:from-gray-700"></div>
           </div>
           
-          {/* Testimonial pagination indicators */}
-          <div className="mt-8 flex justify-center gap-2">
+          {/* Desktop pagination indicators - Hidden on small screens */}
+          <div className="mt-8 hidden md:flex justify-center gap-2">
             {data.map((_, index) => (
               <button
                 key={`indicator-${index}`}

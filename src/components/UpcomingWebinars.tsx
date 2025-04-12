@@ -69,11 +69,11 @@ function UpcomingWebinars() {
   ];
 
   return (
-    <div className="relative py-20 overflow-hidden bg-gradient-to-b from-gray-900 via-gray-950 to-black">
+    <div className="relative mb-28 py-12 md:py-20 overflow-hidden bg-gradient-to-b from-gray-900 via-gray-950 to-black">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-indigo-500 rounded-full filter blur-3xl"></div>
-        <div className="absolute top-3/4 right-1/4 w-64 h-64 bg-teal-500 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-32 md:w-48 h-32 md:h-48 bg-indigo-500 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-3/4 right-1/4 w-40 md:w-64 h-40 md:h-64 bg-teal-500 rounded-full filter blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
@@ -83,13 +83,13 @@ function UpcomingWebinars() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="inline-block text-base font-semibold tracking-wide uppercase py-1 px-3 bg-teal-500/10 text-teal-400 rounded-full mb-3">
+          <h2 className="inline-block text-sm md:text-base font-semibold tracking-wide uppercase py-1 px-3 bg-teal-500/10 text-teal-400 rounded-full mb-3">
             FEATURED WEBINARS
           </h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <p className="mt-2 text-2xl md:text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Enhance Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-indigo-500">Musical Journey</span>
           </p>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-300 opacity-80">
+          <p className="mt-4 max-w-2xl mx-auto text-base md:text-xl text-gray-300 opacity-80">
             Join our expert-led webinars to expand your musical knowledge and skills
           </p>
         </motion.div>
@@ -98,7 +98,7 @@ function UpcomingWebinars() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-12"
+          className="mt-8 md:mt-12"
         >
           <HoverEffect
             items={featuredWebinars.map(webinar => ({
@@ -117,17 +117,17 @@ function UpcomingWebinars() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16 text-center"
+          className="mt-8 md:mt-16 text-center pb-8 md:pb-0"
         >
           <Link href="/"
-            className="group relative inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 ease-in-out rounded-full overflow-hidden"
+            className="group relative inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 font-medium text-white transition-all duration-300 ease-in-out rounded-full overflow-hidden"
           >
             <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-teal-500 to-indigo-600"></span>
             <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-gradient-to-br from-teal-400 to-indigo-500 opacity-30 group-hover:rotate-90 ease"></span>
-            <span className="relative flex items-center">
+            <span className="relative flex items-center text-sm md:text-base">
               <span className="mr-2">View All Webinars</span>
               <svg 
-                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
+                className="w-3 h-3 md:w-4 md:h-4 transition-transform duration-300 group-hover:translate-x-1" 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
